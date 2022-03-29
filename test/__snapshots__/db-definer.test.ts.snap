@@ -201,12 +201,13 @@ Object {
       "Properties": Object {
         "Code": Object {
           "ImageUri": Object {
-            "Fn::Sub": "\${AWS::AccountId}.dkr.ecr.\${AWS::Region}.\${AWS::URLSuffix}/cdk-hnb659fds-container-assets-\${AWS::AccountId}-\${AWS::Region}:f6f1786cecc94a0dd8027e176cf89b139917a57d3e04389ff9b46c2889074340",
+            "Fn::Sub": "\${AWS::AccountId}.dkr.ecr.\${AWS::Region}.\${AWS::URLSuffix}/cdk-hnb659fds-container-assets-\${AWS::AccountId}-\${AWS::Region}:11ae63f4ae4d8478b6cb7801abc3e046976743e357a511924648101c20fbc3d4",
           },
         },
         "Environment": Object {
           "Variables": Object {
             "DB_ENGINE_FAMILY": "MYSQL",
+            "DB_NAME": "prototype",
             "DB_SECRET_NAME": Object {
               "Fn::Join": Array [
                 "-",
@@ -821,12 +822,13 @@ Object {
       "Properties": Object {
         "Code": Object {
           "ImageUri": Object {
-            "Fn::Sub": "\${AWS::AccountId}.dkr.ecr.\${AWS::Region}.\${AWS::URLSuffix}/cdk-hnb659fds-container-assets-\${AWS::AccountId}-\${AWS::Region}:f6f1786cecc94a0dd8027e176cf89b139917a57d3e04389ff9b46c2889074340",
+            "Fn::Sub": "\${AWS::AccountId}.dkr.ecr.\${AWS::Region}.\${AWS::URLSuffix}/cdk-hnb659fds-container-assets-\${AWS::AccountId}-\${AWS::Region}:11ae63f4ae4d8478b6cb7801abc3e046976743e357a511924648101c20fbc3d4",
           },
         },
         "Environment": Object {
           "Variables": Object {
             "DB_ENGINE_FAMILY": "POSTGRESQL",
+            "DB_NAME": "prototype",
             "DB_SECRET_NAME": Object {
               "Fn::Join": Array [
                 "-",
