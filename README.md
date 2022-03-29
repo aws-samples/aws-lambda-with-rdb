@@ -1,4 +1,5 @@
 # Serverless Database Schema Management for RDBMS sample
+[![Build](https://github.com/aws-samples/aws-lambda-with-rdb/actions/workflows/build.yml/badge.svg)](https://github.com/aws-samples/aws-lambda-with-rdb/actions/workflows/build.yml)
 
 ## Overview
 This sample shows you how to manage schema of RDBMS such as Amazon RDS, leveraging AWS Lambda and [sqldef](https://github.com/k0kubun/sqldef), an idempotent and declarative SQL schema management tool.
