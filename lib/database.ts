@@ -16,7 +16,7 @@ export class Database extends Construct {
   constructor(scope: Construct, id: string, props: DatabaseProps) {
     super(scope, id);
 
-    const dbname = 'prototype';
+    const databaseName = 'prototype';
     const engine = ((dbFamily) => {
       if (dbFamily === 'MYSQL') {
         return rds.DatabaseClusterEngine.auroraMysql({
@@ -34,7 +34,7 @@ export class Database extends Construct {
 
     const dbCluster = new rds.DatabaseCluster(this, 'AuroraCluster', {
       engine: engine,
-      defaultDatabaseName: dbname,
+      defaultDatabaseName: databaseName,
       instances: 1,
       instanceProps: {
         instanceType: ec2.InstanceType.of(ec2.InstanceClass.T3, ec2.InstanceSize.MEDIUM),
@@ -63,6 +63,7 @@ export class Database extends Construct {
       environment: {
         DB_SECRET_NAME: secret.secretName,
         DB_ENGINE_FAMILY: dbCluster.engine?.engineFamily!,
+        DB_NAME: databaseName,
       },
     });
     secret.grantRead(dbDefiner);

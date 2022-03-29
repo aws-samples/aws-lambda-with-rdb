@@ -10,10 +10,13 @@ from aws_lambda_powertools import Logger
 from aws_lambda_powertools.utilities import parameters
 
 LAMBDA_TASK_ROOT = os.environ['LAMBDA_TASK_ROOT']
+secret_name = os.environ['DB_SECRET_NAME']
+db_engine_family = os.environ['DB_ENGINE_FAMILY']
+database_name = os.environ['DB_NAME']
+
 command_list = ['init', 'preview', 'sync', 'seed']
 logger = Logger(service='db-definer')
-secret_name = os.environ['DB_SECRET_NAME']
-secret = json.loads(parameters.get_secret(secret_name, max_age=60))
+secret = json.loads(parameters.get_secret(secret_name))
 
 
 class InvalidCommandError(Exception):
@@ -42,7 +45,7 @@ class Database:
     port = str(secret['port'])
     user = secret['username']
     password = secret['password']
-    db_name = secret['dbname']
+    db_name = database_name
     table_def = '/tmp/table_def.sql'
 
     def __init__(self, dialect, ddl_file_path):
@@ -123,7 +126,6 @@ def handler(event, context):
     command = event.get('command')
     if command not in command_list:
         raise InvalidCommandError('Please send events such as {"command": "init"|"preview"|"sync"|"seed"}')
-    db_engine_family = os.environ['DB_ENGINE_FAMILY']
     database = Database(db_engine_family, ddl_file_path)
     if command == 'init':
         database.drop_and_create_database()
