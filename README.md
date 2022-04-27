@@ -1,4 +1,4 @@
-# Serverless Database Schema Management for RDBMS sample
+# Serverless Database Schema Management for RDBMS
 [![Build](https://github.com/aws-samples/aws-lambda-with-rdb/actions/workflows/build.yml/badge.svg)](https://github.com/aws-samples/aws-lambda-with-rdb/actions/workflows/build.yml)
 
 ## Overview
