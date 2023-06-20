@@ -67,6 +67,10 @@ Object {
     },
     "DBAuroraClusterInstance137198F02": Object {
       "DeletionPolicy": "Delete",
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "DBClusterIdentifier": Object {
           "Ref": "DBAuroraCluster6C1914EB",
@@ -76,7 +80,6 @@ Object {
           "Ref": "DBAuroraClusterSubnets6F7FAD49",
         },
         "Engine": "aurora-mysql",
-        "EngineVersion": "5.7.12",
         "PubliclyAccessible": false,
       },
       "Type": "AWS::RDS::DBInstance",
@@ -197,6 +200,8 @@ Object {
       "DependsOn": Array [
         "DBDbDefinerServiceRoleDefaultPolicyD749A5B1",
         "DBDbDefinerServiceRole0A183E3A",
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
       ],
       "Properties": Object {
         "Code": Object {
@@ -294,6 +299,10 @@ Object {
       "Type": "AWS::Lambda::Function",
     },
     "DBDbDefinerSecurityGroupB9883C5F": Object {
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "GroupDescription": "Automatic security group for Lambda Function MyTestStackDBDbDefinerAE96A2A5",
         "SecurityGroupEgress": Array [
@@ -310,6 +319,10 @@ Object {
       "Type": "AWS::EC2::SecurityGroup",
     },
     "DBDbDefinerServiceRole0A183E3A": Object {
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
           "Statement": Array [
@@ -353,6 +366,10 @@ Object {
       "Type": "AWS::IAM::Role",
     },
     "DBDbDefinerServiceRoleDefaultPolicyD749A5B1": Object {
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -688,6 +705,10 @@ Object {
     },
     "DBAuroraClusterInstance137198F02": Object {
       "DeletionPolicy": "Delete",
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "DBClusterIdentifier": Object {
           "Ref": "DBAuroraCluster6C1914EB",
@@ -697,7 +718,6 @@ Object {
           "Ref": "DBAuroraClusterSubnets6F7FAD49",
         },
         "Engine": "aurora-postgresql",
-        "EngineVersion": "13.4",
         "PubliclyAccessible": false,
       },
       "Type": "AWS::RDS::DBInstance",
@@ -818,6 +838,8 @@ Object {
       "DependsOn": Array [
         "DBDbDefinerServiceRoleDefaultPolicyD749A5B1",
         "DBDbDefinerServiceRole0A183E3A",
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
       ],
       "Properties": Object {
         "Code": Object {
@@ -915,6 +937,10 @@ Object {
       "Type": "AWS::Lambda::Function",
     },
     "DBDbDefinerSecurityGroupB9883C5F": Object {
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "GroupDescription": "Automatic security group for Lambda Function MyTestStackDBDbDefinerAE96A2A5",
         "SecurityGroupEgress": Array [
@@ -931,6 +957,10 @@ Object {
       "Type": "AWS::EC2::SecurityGroup",
     },
     "DBDbDefinerServiceRole0A183E3A": Object {
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
           "Statement": Array [
@@ -974,6 +1004,10 @@ Object {
       "Type": "AWS::IAM::Role",
     },
     "DBDbDefinerServiceRoleDefaultPolicyD749A5B1": Object {
+      "DependsOn": Array [
+        "VpcdbSubnet1RouteTableAssociation3FF66701",
+        "VpcdbSubnet2RouteTableAssociation3D000840",
+      ],
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
