@@ -1,5 +1,5 @@
 {
-  "name": "db-seeder",
+  "name": "@aws-samples/db-seeder",
   "version": "0.1.0",
   "bin": {
     "db-seeder": "bin/db-seeder.js"
